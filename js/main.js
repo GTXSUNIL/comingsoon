@@ -31,7 +31,7 @@ hide.addEventListener("click" , ()=>{
 
 // countdown timers start
 // Set the date we're counting down to
-let countdown = new Date("Dec 2, 2021 00:30:00").getTime();
+let countdown = new Date("Dec 2, 2021 10:30:00").getTime();
 
 // update time every 1 second
 let interval = setInterval(()=>{
