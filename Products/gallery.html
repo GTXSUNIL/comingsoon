@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filterable responsive lightbox gallery tutorial</title>
+
+    <!-- magnific-popup css cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+           UNITY ENTERPRISE
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+           <li><a class="active" href="..//index.html">Home</a></li>
+           <li><a href="#">PRODUCTS</a></li>
+           <li><a href="..//contact.html">CONTACT US</a></li>
+           <li><a href="..//Feedback/index.html">Feedback</a></li>
+           
+        </ul>
+     </nav>
+
+
+     <div class="images">
+        <img src="products-banner.png">
+       
+     </div>
+     <h1>Products</h1>
+     <p class="productdescription">We are a One-stop source for all types of Switches,Socket,Accessroies<br>MCB's,DB's,Cable Management,R.C.B.O,
+        ,Wires Cables,Fans Lighting &<br> Fixtures,Luminaries,Stablilzers & Appliances,Rigid UPVC Conduit,Rigid Steel<br> Conducit & Pressure Pipes
+        Line Product of leading Brands.We Seek to bring<br> the latest technological Innovation at the most economical prices under<br> the latest
+        technological Innovation at the most economical prices under<br> one roof.We envisage Offering Our Client With the technologically superior<br>
+        product that in turn help to open new avenues for our Growth 
+    </p>
+
+        <div class="slider">
+            <div class="slide active">
+              <img src="industrial-switches.jpg" alt="">
+              <div class="info">
+                <h2>Industrial Pressure Switches</h2>
+                <p>We Have a Finest Range of Industrial Switches and Industrial ChangeOver</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="Grinder.jpg" alt="">
+              <div class="info">
+                <h2>Grinder</h2>
+                <p>We Have a Finest Range of Grinder and Industrial ChangeOver</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="hammer.jpg" alt="">
+              <div class="info">
+                <h2>Industrial Hameer</h2>
+                <p>We Have a Finest Range of Grinder and Industrial ChangeOver</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="industrial-hot-air-blower-500x500.jpg" alt="">
+              <div class="info">
+                <h2>Industrial Air Blower </h2>
+                <p>We Have a Finest Range of Grinder and Industrial ChangeOver</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="quadri-cantiere-prese-industriali1.jpg" alt="">
+              <div class="info">
+                <h2>Pressure Pipe</h2>
+                <p>We Have a Finest Range of Grinder and Industrial ChangeOver</p>
+              </div>
+            </div>
+            <div class="navigation">
+              <i class="fas fa-chevron-left prev-btn"></i>
+              <i class="fas fa-chevron-right next-btn"></i>
+            </div>
+            <div class="navigation-visibility">
+              <div class="slide-icon active"></div>
+              <div class="slide-icon"></div>
+              <div class="slide-icon"></div>
+              <div class="slide-icon"></div>
+              <div class="slide-icon"></div>
+            </div>
+          </div>
+
+          
+          <script>
+              const slider = document.querySelector(".slider");
+    const nextBtn = document.querySelector(".next-btn");
+    const prevBtn = document.querySelector(".prev-btn");
+    const slides = document.querySelectorAll(".slide");
+    const slideIcons = document.querySelectorAll(".slide-icon");
+    const numberOfSlides = slides.length;
+    var slideNumber = 0;
+
+    //image slider next button
+    nextBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber++;
+
+      if(slideNumber > (numberOfSlides - 1)){
+        slideNumber = 0;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    //image slider previous button
+    prevBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber--;
+
+      if(slideNumber < 0){
+        slideNumber = numberOfSlides - 1;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    //image slider autoplay
+    var playSlider;
+
+    var repeater = () => {
+      playSlider = setInterval(function(){
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        slideIcons.forEach((slideIcon) => {
+          slideIcon.classList.remove("active");
+        });
+
+        slideNumber++;
+
+        if(slideNumber > (numberOfSlides - 1)){
+          slideNumber = 0;
+        }
+
+        slides[slideNumber].classList.add("active");
+        slideIcons[slideNumber].classList.add("active");
+      }, 4000);
+    }
+    repeater();
+
+    //stop the image slider autoplay on mouseover
+    slider.addEventListener("mouseover", () => {
+      clearInterval(playSlider);
+    });
+
+    //start the image slider autoplay again on mouseout
+    slider.addEventListener("mouseout", () => {
+      repeater();
+    });
+          </script>
+
+<div class="gallery">
+
+    <ul class="controls">
+        <li class="buttons active" data-filter="all">ALL</li>
+        <li class="buttons" data-filter="ice-cream">Grinder Blade</li>
+        <li class="buttons" data-filter="chocolate">Fuse&Relays</li>
+        <li class="buttons" data-filter="cake">CONTACTOR</li>
+        <li class="buttons" data-filter="juice">WELDING</li>
+        <li class="buttons" data-filter="sandwich">RCCB</li>
+    </ul>
+
+    <div class="image-container">
+
+        <a href="GrinderBlade/0e1671bcb1ba96e6b7dfa47408d60ae666084fae_original.jpg" class="image ice-cream">
+            <img src="GrinderBlade/0e1671bcb1ba96e6b7dfa47408d60ae666084fae_original.jpg" alt="">
+        </a>
+        <a href="GrinderBlade/angle-grinder-blade-500x500.jpg" class="image ice-cream">
+            <img src="GrinderBlade/angle-grinder-blade-500x500.jpg" alt="">
+        </a>
+        <a href="GrinderBlade/Ceramic Diamond Blade.jpg" class="image ice-cream">
+            <img src="GrinderBlade/Ceramic Diamond Blade.jpg" alt="">
+        </a>
+
+        <a href="fuse&relay/5467effd0c92c98ace14dc19b0f06ae2.jpg" class="image chocolate">
+            <img src="fuse&relay/5467effd0c92c98ace14dc19b0f06ae2.jpg" alt="">
+        </a>
+        <a href="fuse&relay/AFP12-R-kit.jpg" class="image chocolate">
+            <img src="fuse&relay/AFP12-R-kit.jpg" alt="">
+        </a>
+
+        <a href="contactor/19-Sirius-circuit-breaker-for-motors-and-starters-from-Siemens-3RV2011.jpg" class="image cake">
+            <img src="contactor/19-Sirius-circuit-breaker-for-motors-and-starters-from-Siemens-3RV2011.jpg" alt="">
+        </a>
+        <a href="contactor/magnetic-cotactor-function.jpg" class="image cake">
+            <img src="contactor/magnetic-cotactor-function.jpg" alt="">
+        </a>
+        
+
+        <a href="welding/81ts-pltEAL._SX385_.jpg" class="image juice">
+            <img src="welding/81ts-pltEAL._SX385_.jpg" alt="">
+        </a>
+        <a href="welding/arc-inverter-welding-machine-500x500.jpg" class="image juice">
+            <img src="welding/arc-inverter-welding-machine-500x500.jpg" alt="">
+        </a>
+        <a href="welding/sks-arc-200-inverter-welding-machine-500x500.jpg" class="image juice">
+            <img src="welding/sks-arc-200-inverter-welding-machine-500x500.jpg" alt="">
+        </a>
+
+        <a href="image/Havel-Switch_Gear.png" class="image sandwich">
+            <img src="image/Havel-Switch_Gear.png" alt="">
+        </a>
+        <a href="image/Havel-Switch_Gear.png" class="image sandwich">
+            <img src="image/Havel-Switch_Gear.png" alt="">
+        </a>
+        <a href="image/Havel-Switch_Gear.png" class="image sandwich">
+            <img src="image/Havel-Switch_Gear.png" alt="">
+        </a>
+        <a href="image/Havel-Switch_Gear.png" class="image sandwich">
+            <img src="image/Havel-Switch_Gear.png" alt="">
+        </a>
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- magnific popup js cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    $('.buttons').click(function(){
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+        var filter = $(this).attr('data-filter')
+
+        if(filter == 'all'){
+            $('.image').show(400);
+        }else{
+            $('.image').not('.'+filter).hide(200);
+            $('.image').filter('.'+filter).show(400);
+        }
+
+    });
+
+    $('.gallery').magnificPopup({
+
+        delegate:'a',
+        type:'image',
+        gallery:{
+            enabled:true
+        }
+
+    });
+
+});
+
+</script>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>UNITY ENTERPRISE</h4>
+        <ul>
+          <li><a href="..//index.html">HOME</a></li>
+          <li><a href="#">PRODUCTS</a></li>
+          <li><a href="..//contact.html">CONTACT US</a></li>
+          <li><a href="..//Feedback/index.html">FEEDBACK</a></li>
+          
+        </ul>
+      </div>
+      
+      
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+</body>
+</html>

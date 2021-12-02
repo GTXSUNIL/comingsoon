@@ -1,55 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+   <!--------- <title>Responsive Navigation Menu</title>------>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNITY ENTERPRISE</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- vist => fontawesome.com for icons -->
-    <!-- font awesome CDN -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js'></script>
-</head>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">UNITY ENTERPISE</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a class="active" href="#">Home</a></li>
+        
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="Products/gallery.html">Products</a></li>
+        <li><a href="Feedback/">Feedback</a></li>
+      </ul>
+    </nav>
+    <div class="slider">
+		<!-- fade css -->
+		<div class="myslide fade">
+			<div class="txt">
+				<h1>BEST ELECTRICAL PRODUCT</h1>
+				<p>Circut Brakers<br>We Are Leading Suppliers of All Type Circuit Braker For Industrial<br>
+                And Residential Use With Leading Manufacture like:People,GSM,Gloster Etc. </p>
+			</div>
+			<img src="Banner/earth-leakage-protection-lv-installations-920x643-gigapixel-standard-scale-4_00x.jpg" style="width: 100%; height: 100%;">
+		</div>
+		
+		<div class="myslide fade">
+			<div class="txt">
+				<h1>BEST ELECTRICAL PRODUCT</h1>
+				<p>Grinder Blade<br>Unity Enterprise offers you a finest quality of Grinders Blade<br>
+                to comply customers satisfaction</p>
+			</div>
+			<img src="Banner/GrindersMetalworking_banner_3_.jpg" style="width: 100%; height: 100%;">
+		</div>
+		
+		<div class="myslide fade">
+			<div class="txt">
+				<h1>BEST ELECTRICAL PRODUCT</h1>
+				<p>SWITCH GEARS<br>Unity Enterprise Are the experts for Industrial SwitchGears<br>
+                We proudly offer best quality and great pricing for all SwitchGears</p>
+			</div>
+			<img src="Banner/Miniature-Circuit-Breaker-gigapixel-standard-scale-4_00x.jpg" style="width: 100%; height: 100%;">
+		</div>
+		
+		<div class="myslide fade">
+			<div class="txt">
+				<h1>BEST ELECTRICAL PRODUCT</h1>
+				<p>Contactor Motors<br>We offers Contactor Motors that are perfectly designed<br>
+                to meet the varied needs of our valued clients.</p>
+			</div>
+			<img src="Banner/contactor-motor-control-gear-part.jpg" style="width: 100%; height: 100%;">
+		</div>
+		
+		<div class="myslide fade">
+			<div class="txt">
+				<h1>BEST ELECTRICAL PRODUCT</h1>
+				<p>Junction Boxes<br>We are Leading Supplied of all type of Enclosure And junction<br>
+                and junction Box in Reputed Make Like:Hensel</p>
+			</div>
+			<img src="Banner/electrical-junction-box-78374839-584217b23df78c0230173ee9-standard-scale-4_00x-gigapixel.jpg" style="width: 100%; height: 100%;">
+		</div>
+		<!-- /fade css -->
+		
+		<!-- onclick js -->
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		
+		<div class="dotsbox" style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+			<span class="dot" onclick="currentSlide(4)"></span>
+			<span class="dot" onclick="currentSlide(5)"></span>
+		</div>
+		<!-- /onclick js -->
+	</div>
+	
+<script src="jsfile.js"></script>
+<!-- This is the end of HEADER SLIDER -->
 
-<body>
-    <div id="container">
-        <!-- navbar button -->
-        <div id="navbarBtn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <!-- navbar -->
-        <div id="navbar">
-            <!-- hide button -->
-            
-            <div id="hide"><i class="fas fa-times"></i></div>
-        </div>
-        <!-- logo -->
-        <div id="logo">UNITY ENTERPRISE</div>
-        <!-- content -->
-        <div id="content">
-            <div id="text">
-                <h3>CO<b>M</b>IN<b>G S</b>OON</h3>
-                <p>Something new is comming...</p>
-            </div>
-        </div>
-        <!-- social media follow buttons -->
+<div class="about-section">
+    <div class="inner-container">
+        <h1>About Us</h1>
+        <p class="text">
+          Ankit Electricals Private Limited was established in 1984. The Company was incorporated as an Industrial Trading House and is a group of professionals having vast experience in Trading and Marketing of various type of electrical goods.
+
+          Ankit Electicals is a leading stockist and supplier for all sort of Electrical items of various reputed makes.
+        </p>
+        
+    </div>
+</div>
+
+<!-- This is the end of About Us -->
+
+<div class="container">
+    <h1 class="heading"><span>meet</span>Our FOUNDER</h1>
+
+    <div class="profiles">
+      <div class="profile">
+        <img src="images/WhatsApp Image 2021-11-22 at 8.03.22 PM.jpeg" class="profile-img">
+
         
 
-        <!-- count down -->
-        <div id="countdown">
-            <h2>Time Left</h2>
-            <div id="time">
-                <div class="totalTime" id="days">30<b>d</b></div>
-                <div class="totalTime" id="hrs">23<b>h</b></div>
-                <div class="totalTime" id="mins">44<b>m</b></div>
-                <div class="totalTime" id="secs">56<b>s</b></div>
-            </div>
-        </div>
+        <h3 class="user-name">SANTOSH</h3>
+        <h5>FOUNDER&CEO</h5>
+        
+      </div>
+      
     </div>
-    <script src="js/main.js"></script>
-</body>
+  </div>
+  <div class="testimonials">
+    <div class="inner">
+      <h1>WHAT OUR CLIENT SAY ABOUT US</h1>
+      <div class="border"></div>
 
+      <div class="row">
+        <div class="col">
+          <div class="testimonial">
+            <img src="Clients/client2.jpeg" alt="">
+            <div class="name">Dhruvil</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+
+            <p>
+                "Very friendly, very knowledgeable, and they get the job done quickly. Mostly the quality of their work, and they are very helpful when it comes to getting jobs done that are needed.
+            </p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="testimonial">
+            <img src="Clients/client1.jpeg" alt="">
+            <div class="name">Mukul Saini</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+
+            <p>
+                "They do very good electrical work. They are friendly, conscientious about their work, arrive on time, charge fair prices, and make good recommendations about our electrical service. " "I liked their personal touch, and helpful, attentive interest. I've used them twice and would use them again.
+            </p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="testimonial">
+            <img src="Clients/client.jpeg" alt="">
+            <div class="name">Dhwani Bhatt</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <p>"They had excellent customer service, very reasonable rates, and a very polite personnel who were very respectful. I would definitely recommend them again. I think all around, the quality of work was excellent.
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>UNITY ENTERPRISE</h4>
+            <ul>
+              <li><a href="#">HOME</a></li>
+              <li><a href="#">PRODUCTS</a></li>
+              <li><a href="contact.html">CONTACT US</a></li>
+              <li><a href="Feedback/index.html">FEEDBACK</a></li>
+              
+            </ul>
+          </div>
+          
+          
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+              
+  </body>
 </html>
